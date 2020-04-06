@@ -38,7 +38,21 @@ module.exports = {
                     {
                         loader: "file-loader",
                         options: {
-                            outputPath: 'assets/images'
+                            name: '[path][name].[ext]',
+                            outputPath: 'assets/images/',
+                            esModule: false
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: 'fonts/'
                         }
                     }
                 ]

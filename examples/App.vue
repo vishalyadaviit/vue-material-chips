@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="navbar-fixed">
-      <nav>
+      <nav class="vmc-nav">
         <div class="nav-wrapper">
-          <a href="#!" class="brand-logo">Logo</a>
+          <a href="#!" class="brand-logo">Vue Material Chips</a>
           <ul class="right hide-on-med-and-down">
             <li>
               <a href="sass.html">Sass</a>
@@ -17,8 +17,6 @@
     </div>
     <div class="container pt-20">
       <div class="row">
-        <!-- <img src="./assets/images/happyFace.jpg" alt="Contact Person" /> -->
-
         <div class="col s3">
           <div class="collection">
             <a href="#!" class="collection-item">Alvin</a>
@@ -29,7 +27,8 @@
         </div>
 
         <div class="col s9 border-box border-radius-xl">
-          <MaterialChips :chip-values="chipValues"></MaterialChips>
+          <MaterialChips :chip-data="chipValues" :on-chip-remove="onChipRemove"></MaterialChips>
+          <MaterialChips :chip-data="chipContacts" :on-chip-remove="onChipRemove"></MaterialChips>
         </div>
       </div>
     </div>
@@ -45,8 +44,32 @@ export default {
   },
   data() {
     return {
-      chipValues: ["Apple", "Microsoft", "Google", "IBM"]
+      chipValues: ["Apple", "Microsoft", "Google", "IBM"],
+      chipContacts: [
+        {
+          imgUrl: "/examples/assets/images/happyFace.jpg",
+          value: "Vishal Yadav"
+        },
+        {
+          imgUrl: "/examples/assets/images/jerry-vector.jpg",
+          value: "Amarjeet Malik"
+        },
+        {
+          imgUrl: "/examples/assets/images/minion.jpeg",
+          value: "Sagar Mehar"
+        },
+        {
+          imgUrl: "/examples/assets/images/happyFace.jpg",
+          value: "Aman Gupta"
+        }
+      ]
     };
+  },
+  methods: {
+    onChipRemove(chipItem, currentChips) {
+      console.log(chipItem);
+      console.log(currentChips);
+    }
   }
 };
 </script>

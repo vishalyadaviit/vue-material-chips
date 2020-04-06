@@ -1,4 +1,5 @@
 @import "colors";
+@import "icon";
 
 .border-box {
     border: 1px solid $border-grey;
@@ -24,4 +25,18 @@
 
 .pt-20 {
     padding-top: 20px !important;
+}
+
+.vmc-nav {
+    background-color: #ffffff;
+    .brand-logo {
+        color: $default-black;
+        font-size: 1.5rem;
+    }
+
+    ul {
+        a {
+            color: $default-black;
+        }
+    }
 }
