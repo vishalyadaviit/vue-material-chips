@@ -6,6 +6,7 @@ import App from './App.vue';
 // materialize is being used for demonstration only
 import "materialize-css/dist/css/materialize.css";
 import "./scss/style.scss";
+import M from 'materialize-css';
 
 Vue.config.productionTip = false;
 

@@ -1,21 +1,14 @@
 {
-  "name": "vue-material-chips",
+  "name": "vue-material-chips-demo",
   "version": "0.0.0",
-  "description": "Vue.js plugin made for chips using material theme",
-  "main": "index.js",
+  "description": "Its a demo project for Vue js plugin vue-material-chips.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "demo": "cross-env NODE_ENV=production webpack --config=webpack.config.dev.js --progress --mode production",
-    "build": "webpack -p"
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --hot --config=webpack.config.dev.js"
   },
-  "keywords": [
-    "Chips",
-    "Material-Chips"
-  ],
   "author": "Vishal Yadav",
   "license": "ISC",
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
     "autoprefixer": "^9.7.5",
@@ -26,11 +19,11 @@
     "cssnano": "^4.1.10",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.0.4",
+    "materialize-css": "^1.0.0",
     "mini-css-extract-plugin": "^0.9.0",
     "postcss-loader": "^3.0.0",
     "sass": "^1.26.3",
     "sass-loader": "^8.0.2",
-    "url-loader": "^4.1.0",
     "vue": "^2.6.11",
     "vue-loader": "^15.9.1",
     "vue-template-compiler": "^2.6.11",

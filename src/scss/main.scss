@@ -1,0 +1,74 @@
+@import "colors";
+
+.mt-chip {
+    display: inline-block;
+    height: 32px;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.6);
+    line-height: 32px;
+    padding: 0 12px;
+    border-radius: 16px;
+    background-color: #e4e4e4;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    position: relative;
+
+    img {
+        float: left;
+        margin: 0 8px 0 -12px;
+        height: 32px;
+        width: 32px;
+        border-radius: 50%;
+        border-style: none
+    }
+
+    .close {
+        cursor: pointer;
+        float: right;
+        font-size: 16px;
+        line-height: 32px;
+        padding-left: 8px;
+    }
+
+    .close-img {
+        background-attachment: url("/assets/icons/cancel.svg");
+        width: 16px !important;
+        height: 16px !important;
+        max-width: 16px !important;
+        margin-left: 10px !important;
+        margin-right: 0px !important;
+        float: right;
+        cursor: pointer;
+    }
+
+    
+    
+}
+
+.close-icon {
+    position: relative;
+    right: 0px;
+    top: 4px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.close-icon:before, .close-icon:after {
+    position: absolute;
+    left: 10px;
+    content: ' ';
+    height: 16px;
+    width: 2px;
+    background-color: #333;
+}
+
+.close-icon:before {
+    transform: rotate(45deg);
+}
+
+.close-icon:after {
+    transform: rotate(-45deg);
+}

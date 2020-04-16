@@ -1,14 +1,23 @@
 var path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { VueLoaderPlugin } = require('vue-loader');
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+
 module.exports = {
-    entry: "./src/js/index.js",
+    entry: "./src/index.js",
     output: {
         path: path.resolve(__dirname, "dist"),
-        filename: "bundle.js",
-        publicPath: "/dist"
+        filename: "index.js",
+        library: 'MaterialChips',
+        libraryTarget: 'umd'
     },
     module: {
         rules: [
+            {
+                test: /\.vue$/,
+                exclude: /(node_modules)/,
+                loader: 'vue-loader',
+            },
             {
                 test: /\.js$/,
                 exclude: /(node_modules)/,
@@ -38,12 +47,19 @@ module.exports = {
                     {
                         loader: "file-loader",
                         options: {
-                            name: '[path][name].[ext]',
+                            name: '[name].[ext]',
                             outputPath: 'assets/images/',
                             esModule: false
                         }
                     }
                 ]
+            },
+            {
+                test: /\.(jpg|png|svg)$/,
+                loader: "url-loader",
+                options: {
+                    limit: Infinity // everything
+                }
             },
             {
                 test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
@@ -59,9 +75,23 @@ module.exports = {
             }
         ]
     },
+    externals: {
+        vue: 'vue'
+    },
+    resolve: {
+        modules: [
+            path.resolve(__dirname, 'node_modules'),
+        ],
+        alias: {
+            'vue$': 'vue/dist/vue.runtime.esm.js'
+        },
+        extensions: ['.js', '.json', '.vue']
+    },
     plugins: [
+        new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: "main.css"
-        })
+        }),
+        new VueLoaderPlugin()
     ]
 }

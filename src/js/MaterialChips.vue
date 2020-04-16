@@ -1,14 +1,9 @@
 <template>
   <div>
-    <h3>Material Chips</h3>
-    <div class="chip" v-for="(chipItem, index) in currentChips">
+    <div class="mt-chip" v-for="(chipItem, index) in currentChips">
       <img v-if="isObjectLoaded(chipItem) && chipItem.imgUrl" :src="chipItem.imgUrl" alt="No image found" />
       {{isObjectLoaded(chipItem) ? chipItem.value : chipItem}}
-      <i
-        v-if="onChipRemove"
-        class="close material-icons"
-        @click="onRemoveClick(chipItem, index)"
-      >close</i>
+      <div v-if="onChipRemove" @click="onRemoveClick(chipItem, index)" class="close-icon" alt="close" />
     </div>
   </div>
 </template>
@@ -42,6 +37,3 @@ export default {
   }
 };
 </script>
-
-<style>
-</style>

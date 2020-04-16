@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 
 module.exports = {
-    entry: "./examples/index.js",
+    entry: "./index.js",
     output: {
         path: path.resolve(__dirname, "demo"),
         filename: "js/bundle.js",
@@ -32,7 +32,6 @@ module.exports = {
                 use: [
                     { loader: MiniCssExtractPlugin.loader },
                     { loader: "css-loader" },
-                    { loader: "postcss-loader" },
                     {
                         loader: "sass-loader", options: {
                             implementation: require("sass")
@@ -76,7 +75,7 @@ module.exports = {
             showErrors: true,
             cache: true,
             title: "Vue Material Chips",
-            template: path.join(__dirname, 'examples/index.html')
+            template: path.join(__dirname, 'index.html')
         })
     ]
 }
