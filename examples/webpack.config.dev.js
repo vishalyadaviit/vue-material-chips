@@ -2,11 +2,12 @@ var path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
     entry: "./index.js",
     output: {
-        path: path.resolve(__dirname, "demo"),
+        path: path.resolve(__dirname, "../demo"),
         filename: "js/bundle.js",
         publicPath: ""
     },
@@ -32,11 +33,7 @@ module.exports = {
                 use: [
                     { loader: MiniCssExtractPlugin.loader },
                     { loader: "css-loader" },
-                    {
-                        loader: "sass-loader", options: {
-                            implementation: require("sass")
-                        }
-                    }
+                    { loader: "sass-loader" }
                 ]
             },
             {
@@ -66,7 +63,11 @@ module.exports = {
             }
         ]
     },
+    optimization: {
+        minimize: false
+    },
     plugins: [
+        new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: "main.css"
         }),

@@ -61,11 +61,7 @@
 </template>
 
 <script>
-// import MaterialChips from "../src/index";
-// import MaterialChips from "../dist/index";
 import MaterialChips from "vue-material-chips";
-
-import "../dist/main.css";
 
 export default {
   name: "App",

@@ -1,5 +1,4 @@
 var path = require("path");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { VueLoaderPlugin } = require('vue-loader');
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
@@ -16,7 +15,7 @@ module.exports = {
             {
                 test: /\.vue$/,
                 exclude: /(node_modules)/,
-                loader: 'vue-loader',
+                loader: 'vue-loader'
             },
             {
                 test: /\.js$/,
@@ -31,14 +30,10 @@ module.exports = {
             {
                 test: /\.(sa|sc|c)ss$/,
                 use: [
-                    { loader: MiniCssExtractPlugin.loader },
+                    { loader: "vue-style-loader" },
                     { loader: "css-loader" },
-                    { loader: "postcss-loader" },
-                    {
-                        loader: "sass-loader", options: {
-                            implementation: require("sass")
-                        }
-                    }
+                    { loader: "sass-loader" },
+                    { loader: "postcss-loader" }
                 ]
             },
             {
@@ -87,11 +82,9 @@ module.exports = {
         },
         extensions: ['.js', '.json', '.vue']
     },
+
     plugins: [
         new CleanWebpackPlugin(),
-        new MiniCssExtractPlugin({
-            filename: "main.css"
-        }),
         new VueLoaderPlugin()
     ]
 }
