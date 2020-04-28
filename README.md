@@ -31,7 +31,6 @@ The API methods accepts these options:
 
 | Attribute        | Type                | Default              | Description      |
 | :---             | :---:               | :---:                | :---             |
-| chipType         | String              | `normal`             |  You can have 3 types of chips sizes `small`, `normal`, `large`|
 | chipData         | Array               | --                   |  a required field, accepts array   |
 | onChipRemove     | Function            | --                   |  If passed, chips will have a cancel button and onChipRemove will get invoked with chip record  |
         
