@@ -34,7 +34,7 @@
                   </div>
                 </li>
               </ul>
-              <MaterialChips :chip-data="chipValues"></MaterialChips>
+              <VueMaterialChips :chip-data="chipValues"></VueMaterialChips>
             </div>
             <div class="col s12 mt-50">
               <ul class="collapsible box-shadow-none">
@@ -51,7 +51,7 @@
                   </div>
                 </li>
               </ul>
-              <MaterialChips :chip-data="chipContacts" :on-chip-remove="onChipRemove"></MaterialChips>
+              <VueMaterialChips :chip-data="chipContacts" :on-chip-remove="onChipRemove"></VueMaterialChips>
             </div>
           </div>
         </div>
@@ -61,12 +61,12 @@
 </template>
 
 <script>
-import MaterialChips from "vue-material-chips";
+import VueMaterialChips from "vue-material-chips";
 
 export default {
   name: "App",
   components: {
-    MaterialChips
+    VueMaterialChips
   },
   data() {
     return {

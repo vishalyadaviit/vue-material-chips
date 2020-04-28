@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: "MaterialChips",
+  name: "VueMaterialChips",
   props: {
     chipData: {
       type: Array,
