@@ -25,7 +25,28 @@
     
 }
 
-.close-icon {
+.mt-chip-large {
+    padding: 7px 30px !important;
+    height: 48px;
+    font-size: 16px;
+    border-radius: 50px;
+}
+
+.mt-chip-normal {
+    padding: 0px 20px !important;
+    height: 34px;
+    font-size: 14px;
+    border-radius: 50px;
+}
+
+.mt-chip-small {
+    padding: 0px 12px !important;
+    height: 34px;
+    font-size: 12px;
+    border-radius: 50px;
+}
+
+.mt-close {
     position: relative;
     right: 0px;
     top: 4px;
@@ -33,21 +54,62 @@
     height: 16px;
     cursor: pointer;
     display: inline-block;
+
+    &:before {
+        position: absolute;
+        left: 8px;
+        top: 1px;
+        content: ' ';
+        height: 13px;
+        width: 2px;
+        background-color: #333;
+        transform: rotate(45deg);
+    }
+
+    &:after {
+        position: absolute;
+        left: 8px;
+        top: 1px;
+        content: ' ';
+        height: 13px;
+        width: 2px;
+        background-color: #333;
+        transform: rotate(-45deg);
+    }
 }
 
-.close-icon:before, .close-icon:after {
-    position: absolute;
-    left: 10px;
-    content: ' ';
-    height: 16px;
-    width: 2px;
-    background-color: #333;
+.mt-close-large {
+    right: -8px;
+    top: 2px;
+
+    &:before {
+        left: 8px;
+        height: 16px;
+        width: 2px;
+    }
+
+    &:after {
+        left: 8px;
+        height: 16px;
+        width: 2px;
+    }
 }
 
-.close-icon:before {
-    transform: rotate(45deg);
-}
+.mt-close-small {
+    right: 0px;
+    top: 4px;
 
-.close-icon:after {
-    transform: rotate(-45deg);
+    &:before {
+        left: 7px;
+        top: 2px;
+        height: 11px;
+        width: 2px;
+    }
+
+    &:after {
+        left: 7px;
+        top: 2px;
+        height: 11px;
+        width: 2px;
+    }
 }
