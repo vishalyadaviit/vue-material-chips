@@ -18,8 +18,8 @@
     <div class="container pt-20">
       <div class="row">
         <div class="col s12 l10 offset-l1 border-box box-padding border-radius-xl">
-          <div class="row">
-            <div class="col s12 mt-50">
+          <div class="row mt-50">
+            <div class="col s12">
               <ul class="collapsible box-shadow-none">
                 <li>
                   <div class="collapsible-header">
@@ -34,7 +34,12 @@
                   </div>
                 </li>
               </ul>
-              <VueMaterialChips :chip-data="chipValues"></VueMaterialChips>
+              <div class="col s12">
+                <VueMaterialChips :chip-data="chipValues"></VueMaterialChips>
+              </div>
+              <div class="col s12 mt-10">
+                <VueMaterialChips :chip-data="animals" css-class="blue-chip"></VueMaterialChips>
+              </div>
             </div>
             <div class="col s12 mt-50">
               <ul class="collapsible box-shadow-none">
@@ -51,43 +56,9 @@
                   </div>
                 </li>
               </ul>
-              <VueMaterialChips :chip-data="chipContacts" :on-chip-remove="onChipRemove"></VueMaterialChips>
-            </div>
-            <div class="col s12 mt-50">
-              <ul class="collapsible box-shadow-none">
-                <li>
-                  <div class="collapsible-header">
-                    <h5 class="m-0 line-height-30">Large Chips</h5>
-                    <button class="btn btn-transparent text-default ml-auto" type="button">
-                      Code
-                      <i class="material-icons text-default right">code</i>
-                    </button>
-                  </div>
-                  <div class="collapsible-body">
-                    <span>Lorem ipsum dolor sit amet.</span>
-                  </div>
-                </li>
-              </ul>
-              <VueMaterialChips :chip-data="chipValues" chip-type="large"></VueMaterialChips>
-              <VueMaterialChips :chip-data="chipValues" chip-type="large" :on-chip-remove="onChipRemove"></VueMaterialChips>
-            </div>
-            <div class="col s12 mt-50">
-              <ul class="collapsible box-shadow-none">
-                <li>
-                  <div class="collapsible-header">
-                    <h5 class="m-0 line-height-30">Normal Chips</h5>
-                    <button class="btn btn-transparent text-default ml-auto" type="button">
-                      Code
-                      <i class="material-icons text-default right">code</i>
-                    </button>
-                  </div>
-                  <div class="collapsible-body">
-                    <span>Lorem ipsum dolor sit amet.</span>
-                  </div>
-                </li>
-              </ul>
-              <VueMaterialChips :chip-data="chipValues" chip-type="normal" css-class="blue-chip"></VueMaterialChips>
-              <VueMaterialChips :chip-data="chipValues" chip-type="normal" :on-chip-remove="onChipRemove"></VueMaterialChips>
+              <div class="col s12 mt-10">
+                <VueMaterialChips :chip-data="chipContacts" :on-chip-remove="onChipRemove"></VueMaterialChips>
+              </div>
             </div>
             <div class="col s12 mt-50">
               <ul class="collapsible box-shadow-none">
@@ -104,8 +75,35 @@
                   </div>
                 </li>
               </ul>
-              <VueMaterialChips :chip-data="chipValues" chip-type="small"></VueMaterialChips>
-              <VueMaterialChips :chip-data="chipValues" chip-type="small" :on-chip-remove="onChipRemove"></VueMaterialChips>
+              <div class="col s12 mt-10">
+                <VueMaterialChips :chip-data="chipValues" chip-type="small"></VueMaterialChips>
+              </div>
+              <div class="col s12 mt-10">
+                <VueMaterialChips :chip-data="chipValues" chip-type="small" :on-chip-remove="onChipRemove"></VueMaterialChips>
+              </div>
+            </div>
+            <div class="col s12 mt-50">
+              <ul class="collapsible box-shadow-none">
+                <li>
+                  <div class="collapsible-header">
+                    <h5 class="m-0 line-height-30">Large Chips</h5>
+                    <button class="btn btn-transparent text-default ml-auto" type="button">
+                      Code
+                      <i class="material-icons text-default right">code</i>
+                    </button>
+                  </div>
+                  <div class="collapsible-body">
+                    <span>Lorem ipsum dolor sit amet.</span>
+                  </div>
+                </li>
+              </ul>
+              <div class="col s12 mt-10">
+                <VueMaterialChips :chip-data="chipValues" chip-type="large"></VueMaterialChips>
+              </div>
+
+              <div class="col s12 mt-10">
+                <VueMaterialChips :chip-data="chipContacts" chip-type="large" :on-chip-remove="onChipRemove"></VueMaterialChips>
+              </div>
             </div>
           </div>
         </div>
@@ -115,7 +113,8 @@
 </template>
 
 <script>
-import VueMaterialChips from "vue-material-chips";
+// import VueMaterialChips from "vue-material-chips";
+import VueMaterialChips from "../src/index";
 
 export default {
   name: "App",
@@ -125,6 +124,7 @@ export default {
   data() {
     return {
       chipValues: ["Apple", "Microsoft", "Google", "IBM"],
+      animals: ["Cheetah", "Lion", "Kangaroo", "Elephant", "Penguin"],
       chipContacts: [
         {
           imgUrl: "./assets/images/happyFace.jpg",

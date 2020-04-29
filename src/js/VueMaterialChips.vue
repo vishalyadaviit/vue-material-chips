@@ -2,7 +2,7 @@
   <div>
     <div class="mt-chip" v-for="(chipItem, index) in currentChips" :class="computedCssClass">
       <img v-if="isObjectLoaded(chipItem) && chipItem.imgUrl" :src="chipItem.imgUrl" alt="No image found" />
-      {{isObjectLoaded(chipItem) ? chipItem.value : chipItem}}
+      <span>{{isObjectLoaded(chipItem) ? chipItem.value : chipItem}}</span>
       <div v-if="onChipRemove" @click="onRemoveClick(chipItem, index)" class="mt-close" alt="close" :class="chipType ? `mt-close-${chipType}` : ''" />
     </div>
   </div>
