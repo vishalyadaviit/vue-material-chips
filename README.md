@@ -8,6 +8,8 @@ Vue.js plugin made for chips using material theme
 # npm
 npm install --save vue-material-chips 
 ```
+## Examples
+![](examples/assets/images/chipExamples.png)
 
 ## Usage
 ```js
@@ -31,7 +33,9 @@ The API methods accepts these options:
 
 | Attribute        | Type                | Default              | Description      |
 | :---             | :---:               | :---:                | :---             |
-| chipData         | Array               | --                   |  a required field, accepts array   |
+| chipData         | Array               | --                   |  a required field, accepts array, if you would like to pass chipData with imageUrl pass it this way eg. [{ imgUrl: "", value: "" }]   |
+| chipType         | String              | normal               |  Accepts 3 values `small`, `normal`, `large`   |
+| cssClass         | String              | --                   |  You can pass a custom css class to chips with this prop  |
 | onChipRemove     | Function            | --                   |  If passed, chips will have a cancel button and onChipRemove will get invoked with chip record  |
         
 
