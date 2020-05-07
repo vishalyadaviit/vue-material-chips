@@ -1,4 +1,4 @@
-import MaterialChips from "./js/MaterialChips.vue";
+import VueMaterialChips from "./js/VueMaterialChips.vue";
 import "./scss/main.scss";
 
-export default MaterialChips;
+export default VueMaterialChips;

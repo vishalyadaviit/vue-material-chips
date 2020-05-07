@@ -1,6 +1,6 @@
 {
   "name": "vue-material-chips",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Vue.js plugin made for chips using material theme",
   "main": "dist/index.js",
   "files": [

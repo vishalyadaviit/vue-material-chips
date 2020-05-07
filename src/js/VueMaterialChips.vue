@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="mt-chip" v-for="(chipItem, index) in currentChips">
+    <div class="mt-chip" v-for="(chipItem, index) in currentChips" :class="computedCssClass">
       <img v-if="isObjectLoaded(chipItem) && chipItem.imgUrl" :src="chipItem.imgUrl" alt="No image found" />
-      {{isObjectLoaded(chipItem) ? chipItem.value : chipItem}}
-      <div v-if="onChipRemove" @click="onRemoveClick(chipItem, index)" class="close-icon" alt="close" />
+      <span>{{isObjectLoaded(chipItem) ? chipItem.value : chipItem}}</span>
+      <div v-if="onChipRemove" @click="onRemoveClick(chipItem, index)" class="mt-close" alt="close" :class="chipType ? `mt-close-${chipType}` : ''" />
     </div>
   </div>
 </template>
@@ -12,6 +12,14 @@
 export default {
   name: "VueMaterialChips",
   props: {
+    chipType: {
+      type: String,
+      default: () => ""
+    },
+    cssClass: {
+      type: String,
+      default: () => ""
+    },
     chipData: {
       type: Array,
       required: true,
@@ -25,6 +33,19 @@ export default {
     return {
       currentChips: this.$props.chipData
     };
+  },
+  computed: {
+    computedCssClass() {
+      const { chipType, cssClass } = this.$props;
+      let resultClass = "";
+      if (chipType) {
+        resultClass = `mt-chip-${chipType}`;
+      }
+      if (cssClass) {
+        resultClass = `${resultClass} ${cssClass}`;
+      }
+      return resultClass;
+    }
   },
   methods: {
     isObjectLoaded(obj) {
