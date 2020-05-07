@@ -4,14 +4,6 @@
       <nav class="vmc-nav">
         <div class="nav-wrapper">
           <a href="#!" class="brand-logo center">Vue Material Chips</a>
-          <!-- <ul class="right hide-on-med-and-down">
-            <li>
-              <a href="sass.html">Sass</a>
-            </li>
-            <li>
-              <a href="badges.html">Components</a>
-            </li>
-          </ul>-->
         </div>
       </nav>
     </div>
@@ -79,7 +71,7 @@
                 <VueMaterialChips :chip-data="chipValues" chip-type="small"></VueMaterialChips>
               </div>
               <div class="col s12 mt-10">
-                <VueMaterialChips :chip-data="chipValues" chip-type="small" :on-chip-remove="onChipRemove"></VueMaterialChips>
+                <VueMaterialChips :chip-data="chipValues" css-class="black-chip" chip-type="small" :on-chip-remove="onChipRemove"></VueMaterialChips>
               </div>
             </div>
             <div class="col s12 mt-50">
@@ -98,7 +90,7 @@
                 </li>
               </ul>
               <div class="col s12 mt-10">
-                <VueMaterialChips :chip-data="chipValues" chip-type="large"></VueMaterialChips>
+                <VueMaterialChips :chip-data="chipValues" css-class="black-chip" chip-type="large"></VueMaterialChips>
               </div>
 
               <div class="col s12 mt-10">
@@ -127,19 +119,19 @@ export default {
       animals: ["Cheetah", "Lion", "Kangaroo", "Elephant", "Penguin"],
       chipContacts: [
         {
-          imgUrl: "./assets/images/happyFace.jpg",
+          imgUrl: "./assets/images/smiley.jpg",
           value: "Vishal Yadav"
         },
         {
-          imgUrl: "./assets/images/jerry-vector.jpg",
+          imgUrl: "./assets/images/happyFace.jpg",
           value: "Amarjeet Malik"
         },
         {
-          imgUrl: "./assets/images/minion.jpeg",
+          imgUrl: "./assets/images/elephant.jpg",
           value: "Sagar Mehar"
         },
         {
-          imgUrl: "./assets/images/happyFace.jpg",
+          imgUrl: "./assets/images/unicorn.jpg",
           value: "Aman Gupta"
         }
       ]
@@ -147,8 +139,7 @@ export default {
   },
   methods: {
     onChipRemove(chipItem, currentChips) {
-      console.log(chipItem);
-      console.log(currentChips);
+      alert(`Hey! You just closed ${chipItem && typeof chipItem == "object" ? chipItem.value : chipItem}`);
     }
   },
   mounted() {

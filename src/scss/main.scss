@@ -16,9 +16,9 @@
 
     img {
         float: left;
-        margin: 0 6px  0 -15px;
-        height: 32px;
-        width: 32px;
+        margin: 0 6px  0 -16px;
+        height: 34px;
+        width: 34px;
         border-radius: 50%;
         border-style: none
     }
@@ -26,17 +26,25 @@
 }
 
 .mt-chip-large {
-    padding: 7px 30px !important;
     height: 48px;
     font-size: 16px;
     border-radius: 50px;
-}
+    padding: 0px 16px !important;
 
-.mt-chip-normal {
-    padding: 0px 20px !important;
-    height: 34px;
-    font-size: 14px;
-    border-radius: 50px;
+    img {
+        height: 48px;
+        width: 48px;
+    }
+
+    span {
+        margin-left: 4px !important;
+        line-height: 46px !important;
+    }
+
+    .mt-close-large {
+        margin-right: 6px !important;
+    }
+
 }
 
 .mt-chip-small {
@@ -48,7 +56,7 @@
 
 .mt-close {
     position: relative;
-    right: 0px;
+    right: -2px;
     top: 4px;
     width: 16px;
     height: 16px;
@@ -79,7 +87,7 @@
 }
 
 .mt-close-large {
-    right: -8px;
+    right: -4px;
     top: 2px;
 
     &:before {

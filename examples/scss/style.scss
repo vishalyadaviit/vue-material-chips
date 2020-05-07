@@ -101,9 +101,31 @@
     }
 }
 
+.black-chip {
+    background-color: #343a40 !important;
+    color: #ffffff !important;
+
+    .mt-close:before {
+        background-color: white;
+    }
+
+    .mt-close:after {
+        background-color: white;
+    }
+}
+
+
 .blue-chip {
-    background-color: #2196F3 !important;
-    color: #ffffff !important
+    background-color: #007bff !important;
+    color: #ffffff !important;
+
+    .mt-close:before {
+        background-color: white;
+    }
+
+    .mt-close:after {
+        background-color: white;
+    }
 }
 
 
