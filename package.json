@@ -10,8 +10,10 @@
     "build": "cross-env NODE_ENV=production webpack --progress --mode production"
   },
   "keywords": [
-    "Chips",
-    "Material-Chips"
+    "chips",
+    "material-chips",
+    "vue-material-chips",
+    "vue-chips"
   ],
   "author": "Vishal Yadav",
   "license": "ISC",

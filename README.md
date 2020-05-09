@@ -13,19 +13,66 @@ npm install --save vue-material-chips
 
 ## Usage
 ```js
+
 <template>
   <div>
+    <h3>Basic Chips</h3>
     <VueMaterialChips :chip-data="['Apple', 'Microsoft', 'Google', 'IBM']"></VueMaterialChips>
+
+    <h3>Chips | Custom css with cssClass prop</h3>
+    <VueMaterialChips :chip-data="chipValues" css-class="black-chip">
+
+    <h3>Chips | OnChipsRemove Prop</h3>
+    <VueMaterialChips :chip-data="['Apple', 'Microsoft', 'Google', 'IBM']" :on-chip-remove="onChipRemove"></VueMaterialChips>
+    
+    <h3>Large Chips</h3>
+    <VueMaterialChips :chip-data="['Apple', 'Microsoft', 'Google', 'IBM']" chip-type="large"></VueMaterialChips>
+
+    <h3>Chips with Image</h3>
+    <VueMaterialChips :chip-data="chipValues" css-class="black-chip" chip-type="large" :on-chip-remove="onChipRemove"></VueMaterialChips>
   </div>
 </template>
+
 <script>
 import VueMaterialChips from 'vue-material-chips';
 
 export default {
-  components: [VueMaterialChips]
+  components: [VueMaterialChips],
+  data() {
+    return {
+      chipValues: [{
+          imgUrl: require("your relative image path"),
+          value: "Amarjeet Malik"
+        }, {
+          imgUrl: require("your relative image path"),
+          value: "Aman Gupta"
+        }]
+    }
+  },
+  methods: {
+    onChipRemove(chipItem, currentChips) {
+      //chiItem gives you the removed currentChip
+      //currentChips gives you all the remaning chips in the chipData
+    }
+  }
 }
-
 </script>
+
+<style>
+  .black-chip {
+    background-color: #343a40 !important;
+    color: #ffffff !important;
+  }
+
+  .black-chip.mt-close:before {
+    background-color: white;
+  }
+
+  .black-chip.mt-close:after {
+    background-color: white;
+  }
+</style>
+
 ```
 
 ## Available options
