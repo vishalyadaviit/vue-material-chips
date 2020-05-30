@@ -1,6 +1,10 @@
 # vue-material-chips
 Vue.js plugin made for chips using material theme
 
+[![downloads](https://badgen.net/npm/dt/vue-material-chips)](http://npm-stats.com/~packages/vue-material-chips)
+[![npm-version](https://badgen.net/npm/v/vue-material-chips)](https://www.npmjs.com/package/vue-material-chips)
+[![github-tag](https://badgen.net/github/tag/nemeton-x/vue-material-chips)](https://github.com/nemeton-x/vue-material-chips/)
+
 ## [JSFiddle](https://jsfiddle.net/nemeton_x/axrcpu1z/)
 
 ## Installation
