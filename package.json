@@ -1,12 +1,13 @@
 {
   "name": "vue-material-chips",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Vue.js plugin made for chips using material theme",
   "main": "dist/index.js",
   "files": [
     "dist/index.js"
   ],
   "scripts": {
+    "build-dev": "cross-env NODE_ENV=dev webpack",
     "build": "cross-env NODE_ENV=production webpack --progress --mode production"
   },
   "keywords": [
@@ -15,6 +16,11 @@
     "vue-material-chips",
     "vue-chips"
   ],
+  "homepage": "https://github.com/nemeton-x/vue-material-chips#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nemeton-x/vue-material-chips.git"
+  },
   "author": "Vishal Yadav",
   "license": "ISC",
   "dependencies": {},
